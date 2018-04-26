@@ -1,0 +1,80 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+data1 = np.loadtxt('Geomagnetic_1m_ir.csv', delimiter=',', dtype=np.float32)
+data2 = np.loadtxt('Geomagnetic_1m_mg.csv', delimiter=',', dtype=np.float32)
+data3 = np.loadtxt('Geomagnetic_1m_cs.csv', delimiter=',', dtype=np.float32)
+data4 = np.loadtxt('Geomagnetic_1m_yj.csv', delimiter=',', dtype=np.float32)
+data5 = np.loadtxt('Geomagnetic_1m_ny.csv', delimiter=',', dtype=np.float32)
+data6 = np.loadtxt('Geomagnetic_1m_ny2.csv', delimiter=',', dtype=np.float32)
+
+geo_m_db1 = data1[:, [0]]
+geo_x_db1 = data1[:, [1]]
+geo_y_db1 = data1[:, [2]]
+geo_z_db1 = data1[:, [3]]
+
+geo_m_db2 = data2[:, [0]]
+geo_x_db2 = data2[:, [1]]
+geo_y_db2 = data2[:, [2]]
+geo_z_db2 = data2[:, [3]]
+
+geo_m_db3 = data3[:, [0]]
+geo_x_db3 = data3[:, [1]]
+geo_y_db3 = data3[:, [2]]
+geo_z_db3 = data3[:, [3]]
+
+geo_m_db4 = data4[:, [0]]
+geo_x_db4 = data4[:, [1]]
+geo_y_db4 = data4[:, [2]]
+geo_z_db4 = data4[:, [3]]
+
+geo_m_db5 = data5[:, [0]]
+geo_x_db5 = data5[:, [1]]
+geo_y_db5 = data5[:, [2]]
+geo_z_db5 = data5[:, [3]]
+
+geo_m_db6= data6[:, [0]]
+geo_x_db6 = data6[:, [1]]
+geo_y_db6 = data6[:, [2]]
+geo_z_db6 = data6[:, [3]]
+
+length_db = range(len(data1))
+
+plt.figure()
+
+# plt.plot(length_db, geo_m_db1, 'ro-', label='m_ir')
+# plt.plot(length_db, geo_x_db1, 'ro-', label='x_ir')
+# plt.plot(length_db, geo_y_db1, 'ro-', label='y_ir')
+# plt.plot(length_db, geo_z_db1, 'ro-', label='z_ir')
+#
+# plt.plot(length_db, geo_m_db2, 'gs-', label='m_mg')
+# plt.plot(length_db, geo_x_db2, 'go-', label='x_mg')
+# plt.plot(length_db, geo_y_db2, 'go-', label='y_mg')
+# plt.plot(length_db, geo_z_db2, 'go-', label='z_mg')
+
+# plt.plot(length_db, geo_m_db3, 'bo-.', label='m_cs')
+# plt.plot(length_db, geo_x_db3, 'bo-.', label='x_cs')
+# plt.plot(length_db, geo_y_db3, 'bo-.', label='y_cs')
+# plt.plot(length_db, geo_z_db3, 'bo-.', label='z_cs')
+
+# plt.plot(length_db, geo_m_db4, 'co-', label='m_yj')
+# plt.plot(length_db, geo_x_db4, 'co-', label='x_yj')
+# plt.plot(length_db, geo_y_db4, 'co-', label='y_yj')
+# plt.plot(length_db, geo_z_db4, 'co-', label='z_yj')
+
+plt.plot(length_db, geo_m_db5, 'mo-', label='m_ny')
+plt.plot(length_db, geo_x_db5, 'mo-', label='x_ny')
+plt.plot(length_db, geo_y_db5, 'mo-', label='y_ny')
+plt.plot(length_db, geo_z_db5, 'mo-', label='z_ny')
+
+plt.plot(length_db, geo_m_db6, 'yo-', label='m_ny2')
+plt.plot(length_db, geo_x_db6, 'yo-', label='x_ny2')
+plt.plot(length_db, geo_y_db6, 'yo-', label='y_ny2')
+plt.plot(length_db, geo_z_db6, 'yo-', label='z_ny2')
+
+plt.grid()
+plt.legend()
+plt.xlabel('meter')
+plt.ylabel('value')
+plt.title('Geomagnetic')
+plt.show()

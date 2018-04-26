@@ -1,0 +1,26 @@
+function read_geomagnet_file()
+% reads the text file for geomagnetic values and returns v, x, y, z.
+filePath='E:\....\IT-Scan1.txt'; % path for txt file
+fid=fopen(filePath,'r');
+line_no=0;
+v=[];   x=[];   y=[];    z=[];
+while (~feof(fid))
+    line=fgets(fid);
+    str=strsplit(line,'/');
+    line_no=line_no+1;
+    
+    if (line_no>1)
+        v=[v str2double(str(2))];
+        x=[x str2double(str(3))];
+        y=[y str2double(str(4))];
+        z=[z str2double(str(5))];
+    end
+end
+fclose(fid);
+
+xlswrite('E:\....\Data.xlsx',v,1,'A');
+xlswrite('E:\....\Data.xlsx',x,1,'B');
+xlswrite('E:\....\Data.xlsx',y,1,'C');
+xlswrite('E:\....\Data.xlsx',z,1,'C');
+
+end
